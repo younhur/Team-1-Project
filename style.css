@@ -1,0 +1,181 @@
+/* ── 공통 변수 ── */
+:root {
+    --primary:  #26215C;
+    --cta:      #534AB7;
+    --btn:      #7F77DD;
+    --hover:    #AFA9EC;
+    --bg-light: #EEEDFE;
+    --bg-page:  #F8F7FF;
+    --gray:     #6b7280;
+    --border:   #e5e7eb;
+  }
+  
+  /* ── 기본 ── */
+  * { box-sizing: border-box; }
+  
+  body {
+    font-family: 'Pretendard', sans-serif;
+    color: var(--primary);
+    background: #fff;
+  }
+  
+  /* ── 공지 바 ── */
+  .announcement-bar {
+    background: var(--primary);
+    color: #fff;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+  }
+  
+  /* ── 네비게이션 ── */
+  #mainNav {
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+    padding: 12px 0;
+  }
+  
+  .search-input {
+    border: 1.5px solid var(--border);
+    border-right: none;
+    border-radius: 6px 0 0 6px;
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+  
+  .search-input:focus {
+    border-color: var(--btn);
+    box-shadow: none;
+  }
+  
+  .btn-search {
+    background: var(--cta);
+    color: #fff;
+    border: 1.5px solid var(--cta);
+    border-radius: 0 6px 6px 0;
+    padding: 8px 16px;
+  }
+  
+  .btn-search:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #fff;
+  }
+  
+  .nav-icon {
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  
+  .nav-icon:hover { color: var(--btn); }
+  
+  .nav-link {
+    font-size: 14px;
+    color: var(--primary) !important;
+  }
+  
+  /* ── 공통 버튼 ── */
+  .btn-primary-custom {
+    background: var(--cta);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 20px;
+  }
+  
+  .btn-primary-custom:hover {
+    background: var(--primary);
+    color: #fff;
+  }
+  
+  /* ── 히어로 ── */
+  .hero-slide {
+    height: 85vh;
+    min-height: 480px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .slide-1 { background: linear-gradient(135deg, #26215C 0%, #534AB7 100%); }
+  .slide-2 { background: linear-gradient(135deg, #3c3489 0%, #7F77DD 100%); }
+  .slide-3 { background: linear-gradient(135deg, #1e1a4a 0%, #AFA9EC 100%); }
+  
+  .hero-text { max-width: 520px; }
+  
+  .hero-sub {
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--hover);
+    margin-bottom: 12px;
+  }
+  
+  .hero-title {
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-weight: 700;
+    line-height: 1.2;
+    color: #fff;
+    margin-bottom: 12px;
+  }
+  
+  .hero-desc {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .carousel-control-prev,
+  .carousel-control-next { width: 44px; }
+  
+  .carousel-indicators button {
+    background-color: rgba(255, 255, 255, 0.5) !important;
+    width: 20px !important;
+    height: 3px !important;
+    border-radius: 2px !important;
+  }
+  
+  .carousel-indicators .active {
+    background-color: #fff !important;
+  }
+  
+  /* ── 푸터 ── */
+  .footer {
+    background: var(--primary);
+  }
+  
+  .footer-heading {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 14px;
+    font-weight: 600;
+  }
+  
+  .footer-link {
+    display: block;
+    color: rgba(255, 255, 255, 0.55);
+    text-decoration: none;
+    font-size: 13px;
+    margin-bottom: 8px;
+    transition: color 0.2s;
+  }
+  
+  .footer-link:hover { color: #fff; }
+  
+  .footer-hr { border-color: rgba(255, 255, 255, 0.15); }
+  
+  .social-icon {
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  
+  .social-icon:hover { color: #fff; }
+  
+  .text-muted { color: rgba(255, 255, 255, 0.55) !important; }

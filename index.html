@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pagely — E-Book Store</title>
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Pretendard -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <!-- 공지 바 -->
+    <div class="announcement-bar text-center py-2">
+      <small>🎉 신규 가입 시 첫 달 무료 · 전자책 30만 권 보유</small>
+    </div>
+
+    <!-- 네비게이션 -->
+    <nav class="navbar navbar-expand-lg sticky-top" id="mainNav">
+      <div class="container">
+
+        <!-- 로고 (컬러 배경용) -->
+        <a class="navbar-brand" href="#">
+          <img src="images/logo_color_background.svg" alt="Pagely 로고" height="36" />
+        </a>
+
+        <!-- 검색창 (데스크탑) -->
+        <div class="search-wrap d-none d-lg-flex mx-4 flex-grow-1">
+          <div class="input-group">
+            <input type="text" class="form-control search-input"
+              placeholder="읽고 싶은 책을 검색해보세요" />
+            <button class="btn btn-search" type="button">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- 우측 버튼 + 햄버거 -->
+        <div class="d-flex align-items-center gap-3">
+          <a href="login.html" class="nav-icon d-none d-lg-block">
+            <i class="bi bi-person"></i>
+            <span class="ms-1 small">로그인</span>
+          </a>
+          <a href="login.html" class="btn btn-primary-custom btn-sm d-none d-lg-block">
+            회원가입
+          </a>
+          <a href="#" class="nav-icon d-none d-lg-block">
+            <i class="bi bi-bag"></i>
+            <span class="ms-1 small">장바구니</span>
+          </a>
+          <button class="navbar-toggler border-0" type="button"
+            data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <i class="bi bi-list fs-4"></i>
+          </button>
+        </div>
+
+        <!-- 모바일 메뉴 -->
+        <div class="collapse navbar-collapse mt-3 mt-lg-0" id="navMenu">
+          <div class="d-lg-none mb-3">
+            <div class="input-group">
+              <input type="text" class="form-control search-input" placeholder="책 검색" />
+              <button class="btn btn-search" type="button">
+                <i class="bi bi-search"></i>
+              </button>
+            </div>
+          </div>
+          <ul class="navbar-nav ms-auto gap-2 d-lg-none">
+            <li class="nav-item"><a class="nav-link" href="login.html">로그인</a></li>
+            <li class="nav-item"><a class="nav-link" href="login.html">회원가입</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">장바구니</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+
+    <!-- 히어로 캐러셀 -->
+    <section id="hero">
+      <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#heroCarousel"
+            data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#heroCarousel"
+            data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#heroCarousel"
+            data-bs-slide-to="2"></button>
+        </div>
+
+        <div class="carousel-inner">
+
+          <!-- 슬라이드 1 -->
+          <div class="carousel-item active hero-slide slide-1">
+            <div class="container h-100 d-flex align-items-center">
+              <div class="hero-text">
+                <p class="hero-sub">2025 여름 추천</p>
+                <h1 class="hero-title">읽는 즐거움,<br/>언제 어디서나</h1>
+                <p class="hero-desc">30만 권의 전자책을 한 곳에서</p>
+                <a href="list.html" class="btn btn-light btn-lg mt-3 rounded-0 px-4">
+                  지금 시작하기
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 슬라이드 2 -->
+          <div class="carousel-item hero-slide slide-2">
+            <div class="container h-100 d-flex align-items-center">
+              <div class="hero-text">
+                <p class="hero-sub">신규 출시</p>
+                <h1 class="hero-title">이달의 베스트<br/>오디오북</h1>
+                <p class="hero-desc">눈이 피로할 땐 귀로 읽는 책</p>
+                <a href="list.html" class="btn btn-outline-light btn-lg mt-3 rounded-0 px-4">
+                  오디오북 보기
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 슬라이드 3 -->
+          <div class="carousel-item hero-slide slide-3">
+            <div class="container h-100 d-flex align-items-center justify-content-end">
+              <div class="hero-text text-end">
+                <p class="hero-sub">첫 달 무료</p>
+                <h1 class="hero-title">구독 한 번으로<br/>무제한 독서</h1>
+                <p class="hero-desc">월 9,900원으로 전 장르 무제한</p>
+                <a href="login.html" class="btn btn-light btn-lg mt-3 rounded-0 px-4">
+                  무료로 시작
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <button class="carousel-control-prev" type="button"
+          data-bs-target="#heroCarousel" data-bs-slide="prev">
+          <i class="bi bi-chevron-left fs-4 text-white"></i>
+        </button>
+        <button class="carousel-control-next" type="button"
+          data-bs-target="#heroCarousel" data-bs-slide="next">
+          <i class="bi bi-chevron-right fs-4 text-white"></i>
+        </button>
+      </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer class="footer py-5">
+      <div class="container">
+        <div class="row g-4">
+
+          <!-- 로고 + 소개 -->
+          <div class="col-md-4">
+            <img src="images/logo_white_background.svg"
+              alt="Pagely 로고" height="32" class="mb-3" />
+            <p class="text-muted small">
+              읽는 즐거움, 언제 어디서나.<br/>
+              30만 권의 전자책 플랫폼.
+            </p>
+            <div class="d-flex gap-3 mt-3">
+              <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="social-icon"><i class="bi bi-youtube"></i></a>
+              <a href="#" class="social-icon"><i class="bi bi-twitter-x"></i></a>
+            </div>
+          </div>
+
+          <!-- 고객센터 -->
+          <div class="col-6 col-md-2">
+            <h6 class="footer-heading">고객센터</h6>
+            <ul class="list-unstyled">
+              <li><a href="#" class="footer-link">공지사항</a></li>
+              <li><a href="#" class="footer-link">자주 묻는 질문</a></li>
+              <li><a href="#" class="footer-link">1:1 문의</a></li>
+            </ul>
+          </div>
+
+          <!-- 서비스 -->
+          <div class="col-6 col-md-2">
+            <h6 class="footer-heading">서비스</h6>
+            <ul class="list-unstyled">
+              <li><a href="#" class="footer-link">제휴카드</a></li>
+              <li><a href="#" class="footer-link">뷰어 다운로드</a></li>
+            </ul>
+            <h6 class="footer-heading mt-3">기타 문의</h6>
+            <ul class="list-unstyled">
+              <li><a href="#" class="footer-link">원고 투고</a></li>
+              <li><a href="#" class="footer-link">사업 제휴</a></li>
+            </ul>
+          </div>
+
+          <!-- 회사 -->
+          <div class="col-6 col-md-2">
+            <h6 class="footer-heading">회사</h6>
+            <ul class="list-unstyled">
+              <li><a href="#" class="footer-link">회사 스토리</a></li>
+              <li><a href="#" class="footer-link">인재 채용</a></li>
+            </ul>
+          </div>
+
+        </div>
+
+        <hr class="footer-hr mt-4 mb-3" />
+
+        <div class="d-flex flex-column flex-md-row
+          justify-content-between align-items-center gap-2">
+          <p class="small text-muted mb-0">
+            © 2025 Pagely. All rights reserved.
+          </p>
+          <div class="d-flex gap-3 flex-wrap">
+            <a href="#" class="footer-link small">이용약관</a>
+            <a href="#" class="footer-link small">개인정보처리방침</a>
+            <a href="#" class="footer-link small">청소년보호정책</a>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
