@@ -10,7 +10,6 @@
     --border:   #e5e7eb;
   }
   
-  /* ── 기본 ── */
   * { box-sizing: border-box; }
   
   body {
@@ -27,11 +26,12 @@
     letter-spacing: 0.02em;
   }
   
-  /* ── 네비게이션 ── */
+  /* ── 네비게이션 1단 ── */
   #mainNav {
     background: #fff;
     border-bottom: 1px solid var(--border);
-    padding: 12px 0;
+    padding: 10px 0;
+    z-index: 1000;
   }
   
   .search-input {
@@ -77,6 +77,37 @@
     color: var(--primary) !important;
   }
   
+  /* ── 네비게이션 2단 ── */
+  .category-nav {
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .category-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 0;
+  }
+  
+  .category-link {
+    display: block;
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--gray);
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+  }
+  
+  .category-link:hover,
+  .category-link.active {
+    color: var(--cta);
+    border-bottom-color: var(--cta);
+  }
+  
   /* ── 공통 버튼 ── */
   .btn-primary-custom {
     background: var(--cta);
@@ -93,10 +124,42 @@
     color: #fff;
   }
   
+  .btn-outline-primary-custom {
+    background: transparent;
+    color: var(--cta);
+    border: 1.5px solid var(--cta);
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 20px;
+  }
+  
+  .btn-outline-primary-custom:hover {
+    background: var(--cta);
+    color: #fff;
+  }
+  
+  /* ── 섹션 공통 ── */
+  .section-sub {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--btn);
+    margin-bottom: 6px;
+  }
+  
+  .section-title {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 700;
+    color: var(--primary);
+  }
+  
+  .bg-light-custom { background: var(--bg-light); }
+  
   /* ── 히어로 ── */
   .hero-slide {
-    height: 85vh;
-    min-height: 480px;
+    height: 80vh;
+    min-height: 460px;
     display: flex;
     align-items: center;
   }
@@ -142,6 +205,160 @@
     background-color: #fff !important;
   }
   
+  /* ── 카테고리 ── */
+  .category-card {
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    padding: 28px 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.25s;
+    background: #fff;
+    color: var(--primary);
+  }
+  
+  .category-card i { color: var(--cta); }
+  .category-card h6 { color: var(--primary); font-weight: 600; }
+  
+  .category-card:hover {
+    background: var(--cta);
+    border-color: var(--cta);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(83, 74, 183, 0.2);
+  }
+  
+  .category-card:hover i,
+  .category-card:hover h6,
+  .category-card:hover p { color: #fff !important; }
+  
+  /* ── 도서 카드 ── */
+  .book-cover {
+    width: 100%;
+    height: 240px;
+    position: relative;
+    border-radius: 8px;
+  }
+  
+  @media (max-width: 576px) {
+    .book-cover { height: 180px; }
+  }
+  
+  .bc-1 { background: linear-gradient(160deg, #26215C, #534AB7); }
+  .bc-2 { background: linear-gradient(160deg, #534AB7, #7F77DD); }
+  .bc-3 { background: linear-gradient(160deg, #c9a0dc, #9b59b6); }
+  .bc-4 { background: linear-gradient(160deg, #2c3e50, #4a6fa5); }
+  .bc-5 { background: linear-gradient(160deg, #1a535c, #4ecdc4); }
+  .bc-6 { background: linear-gradient(160deg, #e74c3c, #c0392b); }
+  .bc-7 { background: linear-gradient(160deg, #f39c12, #d68910); }
+  .bc-8 { background: linear-gradient(160deg, #27ae60, #1e8449); }
+  .bc-new1 { background: linear-gradient(160deg, #3c3489, #AFA9EC); }
+  .bc-new2 { background: linear-gradient(160deg, #c9a0dc, #7F77DD); }
+  .bc-new3 { background: linear-gradient(160deg, #27ae60, #2ecc71); }
+  .bc-new4 { background: linear-gradient(160deg, #f39c12, #e67e22); }
+  
+  .book-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    font-size: 10px;
+    letter-spacing: 0.05em;
+    border-radius: 4px !important;
+    padding: 4px 8px;
+  }
+  
+  .book-brand {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--btn);
+    margin-bottom: 4px;
+  }
+  
+  .book-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .book-author {
+    font-size: 12px;
+    color: var(--gray);
+    margin-bottom: 6px;
+  }
+  
+  .book-price {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--cta);
+    margin-bottom: 10px;
+  }
+  
+  /* ── 도서 목록 탭 ── */
+  .book-tabs {
+    border-bottom: 2px solid var(--border);
+    gap: 4px;
+  }
+  
+  .book-tab-btn {
+    border: none !important;
+    color: var(--gray);
+    font-size: 15px;
+    font-weight: 500;
+    padding: 10px 24px;
+    border-radius: 0 !important;
+    background: transparent;
+  }
+  
+  .book-tab-btn.active {
+    color: var(--cta) !important;
+    border-bottom: 2px solid var(--cta) !important;
+    background: transparent !important;
+    margin-bottom: -2px;
+  }
+  
+  .book-tab-btn:hover { color: var(--cta); }
+  
+  /* ── 구독 배너 ── */
+  .subscribe-banner {
+    background: linear-gradient(135deg, #26215C 0%, #534AB7 100%);
+    padding: 80px 0;
+  }
+  
+  .subscribe-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.2;
+    color: #fff;
+  }
+  
+  .subscribe-title span { color: var(--hover); }
+  
+  /* ── Pagely 즐기는 법 ── */
+  .guide-icon {
+    width: 64px;
+    height: 64px;
+    background: var(--bg-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 1.6rem;
+    color: var(--cta);
+    transition: all 0.25s;
+  }
+  
+  .guide-item:hover .guide-icon {
+    background: var(--cta);
+    color: #fff;
+  }
+  
+  .guide-item h6 { font-weight: 600; color: var(--primary); }
+  
   /* ── 푸터 ── */
   .footer {
     background: var(--primary);
@@ -166,8 +383,8 @@
   }
   
   .footer-link:hover { color: #fff; }
-  
   .footer-hr { border-color: rgba(255, 255, 255, 0.15); }
+  .footer .text-muted { color: rgba(255, 255, 255, 0.55) !important; }
   
   .social-icon {
     color: rgba(255, 255, 255, 0.55);
@@ -177,5 +394,3 @@
   }
   
   .social-icon:hover { color: #fff; }
-  
-  .text-muted { color: rgba(255, 255, 255, 0.55) !important; }
