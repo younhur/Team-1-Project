@@ -266,15 +266,27 @@
     return "detail.html?book=" + encodeURIComponent(title);
   }
 
-  // ── 1) 메인/목록/상세의 도서 카드 "담기" 링크 자동 연결 ──
-  function wireBookLinks() {
-    const links = document.querySelectorAll('a[href="detail.html"]');
-    links.forEach(function (a) {
-      const card = a.closest(".book-card");
-      if (!card) return;
+  // ── 1) 도서 카드 보정: 상세 링크 연결 + 비어있는 표지 채우기 ──
+  function enhanceCards() {
+    document.querySelectorAll(".book-card").forEach(function (card) {
       const titleEl = card.querySelector(".book-title");
       if (!titleEl) return;
-      a.setAttribute("href", detailUrl(titleEl.textContent.trim()));
+      const title = titleEl.textContent.trim();
+      const book = BY_TITLE[title];
+
+      // 담기 링크 → 책별 상세페이지
+      const link = card.querySelector('a[href="detail.html"]');
+      if (link) link.setAttribute("href", detailUrl(title));
+
+      // 표지 이미지가 없으면 카탈로그 표지로 채움 (예: 상세페이지 '함께 보면 좋은 책')
+      const cover = card.querySelector(".book-cover");
+      if (cover && book && !cover.querySelector("img")) {
+        const img = document.createElement("img");
+        img.alt = title;
+        img.onerror = function () { this.onerror = null; this.src = "images/book_fastlane.jpg"; };
+        img.src = book.cover;
+        cover.insertBefore(img, cover.firstChild);
+      }
     });
   }
 
@@ -380,7 +392,7 @@
   }
 
   // ── 실행 (스크립트가 </body> 직전 로드 → DOM 준비됨) ──
-  wireBookLinks();
+  enhanceCards();
 
   if (document.querySelector(".detail-title")) {
     // ?id= 우선, 없으면 ?book=(제목), 그래도 없으면 기본 도서
