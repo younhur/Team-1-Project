@@ -94,8 +94,9 @@
   const subscribeBtn = document.getElementById("subscribeBtn");
   if (subscribeBtn) {
     subscribeBtn.addEventListener("click", function () {
-      // 전자책 뷰어로 이동
-      window.location.href = "viewer.html";
+      // 선택한 도서를 전자책 뷰어로 전달
+      const id = BOOK.id ? "?id=" + encodeURIComponent(BOOK.id) : "";
+      window.location.href = "viewer.html" + id;
     });
   }
 })();
