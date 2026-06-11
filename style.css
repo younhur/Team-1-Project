@@ -255,14 +255,12 @@
    /* ── 도서 카드 ── */
   .book-cover {
     width: 100%;
-    height: 240px;
+    aspect-ratio: 2 / 3;  /* height 대신 비율로 ㅈ;정 */
     position: relative;
     border-radius: 8px;
   }
   
-  @media (max-width: 576px) {
-    .book-cover { height: 180px; }
-  }
+
   
   .bc-1 { background: linear-gradient(160deg, #26215C, #534AB7); }
   .bc-2 { background: linear-gradient(160deg, #534AB7, #7F77DD); }
