@@ -415,3 +415,321 @@
   }
   
   .social-icon:hover { color: #fff; }
+
+  /* ── 상세페이지: 브레드크럼 ── */
+  .breadcrumb-bar {
+    background: var(--bg-page);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 0;
+  }
+
+  .breadcrumb-bar .breadcrumb {
+    margin: 0;
+    font-size: 12px;
+  }
+
+  .breadcrumb-bar .breadcrumb-item,
+  .breadcrumb-bar .breadcrumb-item a {
+    color: var(--gray);
+    text-decoration: none;
+  }
+
+  .breadcrumb-bar .breadcrumb-item a:hover { color: var(--cta); }
+  .breadcrumb-bar .breadcrumb-item.active { color: var(--btn); font-weight: 500; }
+
+  /* ── 상세페이지: 표지 열 ── */
+  .detail-cover {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    border-radius: 10px;
+    margin-bottom: 14px;
+    box-shadow: 0 12px 30px rgba(38, 33, 92, 0.18);
+  }
+
+  /* 실제 도서 표지 이미지 */
+  .detail-cover-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    margin-bottom: 14px;
+    box-shadow: 0 12px 30px rgba(38, 33, 92, 0.25);
+  }
+
+  @media (max-width: 991px) {
+    .detail-cover-img { max-width: 220px; display: block; margin-left: auto; margin-right: auto; }
+  }
+
+  /* 도서 표지 아트 ('부의 추월차선' — 추월차선/고속도로 테마) */
+  .book-cover-art {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    border-radius: 10px;
+    margin-bottom: 14px;
+    box-shadow: 0 12px 30px rgba(38, 33, 92, 0.25);
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(165deg, #1a1647 0%, #26215C 45%, #534AB7 100%);
+    display: flex;
+    flex-direction: column;
+    padding: 26px 22px;
+    color: #fff;
+  }
+
+  /* 원근감 있는 차선(도로) — 표지 하단을 가로지름 */
+  .book-cover-art::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -10%;
+    width: 14%;
+    height: 70%;
+    transform: translateX(-50%);
+    background: repeating-linear-gradient(
+      to top,
+      rgba(255, 255, 255, 0.85) 0 8%,
+      transparent 8% 18%
+    );
+    clip-path: polygon(38% 100%, 62% 100%, 56% 0, 44% 0);
+    opacity: 0.55;
+  }
+
+  .book-cover-art .cover-publisher {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--hover);
+    position: relative;
+    z-index: 1;
+  }
+
+  .book-cover-art .cover-title {
+    font-size: clamp(1.7rem, 6vw, 2.1rem);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-top: 14px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .book-cover-art .cover-accent {
+    width: 44px;
+    height: 4px;
+    background: #f5a623;
+    border-radius: 2px;
+    margin-top: 16px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .book-cover-art .cover-author {
+    margin-top: auto;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.85);
+    position: relative;
+    z-index: 1;
+  }
+
+  .cover-sticky { position: sticky; top: 90px; }
+
+  @media (max-width: 991px) {
+    .cover-sticky { position: static; }
+    .detail-cover { max-width: 220px; margin-left: auto; margin-right: auto; }
+  }
+
+  /* ── 상세페이지: 도서 정보 ── */
+  .genre-tag {
+    display: inline-block;
+    background: var(--bg-light);
+    color: var(--cta);
+    font-size: 11px;
+    font-weight: 500;
+    padding: 5px 12px;
+    border-radius: 5px;
+    margin-bottom: 12px;
+  }
+
+  .detail-title {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+    color: var(--primary);
+    line-height: 1.3;
+    margin-bottom: 6px;
+  }
+
+  .detail-author {
+    font-size: 14px;
+    color: var(--gray);
+    margin-bottom: 12px;
+  }
+
+  .detail-stars {
+    color: #f5a623;
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+
+  .detail-stars .review-count {
+    color: var(--gray);
+    font-size: 12px;
+    margin-left: 6px;
+  }
+
+  /* 정보 행 (출판사 / 출간일 / 페이지 / 형식) */
+  .info-row {
+    display: flex;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+
+  .info-item {
+    flex: 1;
+    padding: 12px 8px;
+    text-align: center;
+    border-right: 1px solid var(--border);
+  }
+
+  .info-item:last-child { border-right: none; }
+  .info-label { font-size: 11px; color: var(--gray); margin-bottom: 4px; }
+  .info-val { font-size: 13px; font-weight: 600; color: var(--primary); }
+
+  /* 가격 */
+  .detail-price {
+    font-size: clamp(1.6rem, 3vw, 2rem);
+    font-weight: 700;
+    color: var(--cta);
+    margin-bottom: 18px;
+  }
+
+  .detail-price .price-sub {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--gray);
+    margin-left: 8px;
+  }
+
+  /* 구매 버튼 */
+  .btn-subscribe {
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 13px;
+  }
+
+  .btn-subscribe:hover { background: #1a1647; color: #fff; }
+
+  .btn-buy {
+    background: var(--cta);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 13px;
+  }
+
+  .btn-buy:hover { background: var(--primary); color: #fff; }
+
+  .btn-cart-lg {
+    background: transparent;
+    color: var(--cta);
+    border: 2px solid var(--cta);
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 12px;
+  }
+
+  .btn-cart-lg:hover { background: var(--cta); color: #fff; }
+
+  /* 위시리스트 / 공유 */
+  .btn-wish {
+    background: transparent;
+    color: var(--gray);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 13px;
+    padding: 9px;
+  }
+
+  .btn-wish:hover { color: var(--cta); border-color: var(--cta); }
+  .btn-wish.active { color: #e0405e; border-color: #e0405e; }
+
+  /* ── 상세페이지: 섹션 ── */
+  .detail-section { padding: 36px 0; border-top: 1px solid var(--border); }
+
+  .detail-section-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary);
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--cta);
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+
+  .detail-desc {
+    font-size: 15px;
+    color: var(--gray);
+    line-height: 1.9;
+  }
+
+  /* ── 상세페이지: 목차 아코디언 ── */
+  .toc-accordion .accordion-item {
+    border: 1px solid var(--border);
+    border-radius: 8px !important;
+    margin-bottom: 8px;
+    overflow: hidden;
+  }
+
+  .toc-accordion .accordion-button {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--primary);
+    background: #fff;
+    box-shadow: none;
+    padding: 14px 16px;
+  }
+
+  .toc-accordion .accordion-button:not(.collapsed) {
+    color: var(--cta);
+    background: var(--bg-page);
+  }
+
+  .toc-accordion .accordion-button:focus { box-shadow: none; }
+
+  .toc-accordion .accordion-button::after {
+    width: 16px;
+    height: 16px;
+    background-size: 16px;
+  }
+
+  .toc-line {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: var(--gray);
+    padding: 8px 0;
+    border-bottom: 1px solid var(--bg-light);
+  }
+
+  .toc-line:last-child { border-bottom: none; }
+  .toc-line .toc-page { color: var(--btn); flex-shrink: 0; margin-left: 16px; }
+
+  /* ── 상세페이지: 리뷰 ── */
+  .review-summary {
+    background: var(--bg-page);
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+  }
+
+  .review-score { font-size: 44px; font-weight: 700; color: var(--primary); line-height: 1; }
+  .review-card { border: 1px solid var(--border); border-radius: 10px; padding: 18px; height: 100%; }
+  .review-card .reviewer { font-size: 13px; font-weight: 600; color: var(--primary); }
+  .review-card .review-date { font-size: 11px; color: var(--gray); }
