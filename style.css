@@ -223,34 +223,36 @@
   
   .rotate-left  { transform: rotate(-6deg); margin-bottom: 12px; }
   .rotate-right { transform: rotate(4deg);  margin-bottom: 6px; }
-  
+
   /* ── 카테고리 ── */
   .category-card {
-    border: 1.5px solid var(--border);
-    border-radius: 12px;
-    padding: 28px 16px;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.25s;
-    background: #fff;
-    color: var(--primary);
-  }
+  border: 1.5px solid #CECBF6;      /* 변경: 퍼플 테두리 */
+  border-radius: 12px;
+  padding: 28px 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.25s;
+  background: #EEEDFE;              /* 변경: 연한 퍼플 배경 */
+  color: var(--primary);
+}
+
+.category-card i { color: var(--primary); }
+.category-card h6 { color: var(--primary); font-weight: 600; }
+.category-card p { color: var(--cta); }
+
+/* 호버는 그대로 유지 */
+.category-card:hover {
+  background: var(--cta);
+  border-color: var(--cta);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(83, 74, 183, 0.2);
+}
+
+.category-card:hover i,
+.category-card:hover h6,
+.category-card:hover p { color: #fff !important; }
   
-  .category-card i { color: var(--cta); }
-  .category-card h6 { color: var(--primary); font-weight: 600; }
-  
-  .category-card:hover {
-    background: var(--cta);
-    border-color: var(--cta);
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(83, 74, 183, 0.2);
-  }
-  
-  .category-card:hover i,
-  .category-card:hover h6,
-  .category-card:hover p { color: #fff !important; }
-  
-  /* ── 도서 카드 ── */
+   /* ── 도서 카드 ── */
   .book-cover {
     width: 100%;
     height: 240px;
