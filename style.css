@@ -472,3 +472,19 @@
 .list-header { ... }
 .list-header-title { ... }
 ...이하 list.html 전용 코드...
+
+.sort-select {
+    width: auto;
+    min-width: 120px;
+    max-width: 160px;
+    font-size: 13px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--primary);
+    padding: 6px 12px;
+  }
+  
+  .sort-select:focus {
+    box-shadow: none;
+    border-color: var(--btn);
+  }
