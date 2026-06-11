@@ -274,18 +274,29 @@
       const title = titleEl.textContent.trim();
       const book = BY_TITLE[title];
 
+      const href = detailUrl(title);
+
       // 담기 링크 → 책별 상세페이지
       const link = card.querySelector('a[href="detail.html"]');
-      if (link) link.setAttribute("href", detailUrl(title));
+      if (link) link.setAttribute("href", href);
 
-      // 표지 이미지가 없으면 카탈로그 표지로 채움 (예: 상세페이지 '함께 보면 좋은 책')
       const cover = card.querySelector(".book-cover");
-      if (cover && book && !cover.querySelector("img")) {
-        const img = document.createElement("img");
-        img.alt = title;
-        img.onerror = function () { this.onerror = null; this.src = "images/book_fastlane.jpg"; };
-        img.src = book.cover;
-        cover.insertBefore(img, cover.firstChild);
+      if (cover) {
+        // 표지 이미지가 없으면 카탈로그 표지로 채움 (예: 상세페이지 '함께 보면 좋은 책')
+        if (book && !cover.querySelector("img")) {
+          const img = document.createElement("img");
+          img.alt = title;
+          img.onerror = function () { this.onerror = null; this.src = "images/book_fastlane.jpg"; };
+          img.src = book.cover;
+          cover.insertBefore(img, cover.firstChild);
+        }
+        // 표지/제목을 클릭해도 상세페이지로 이동
+        cover.style.cursor = "pointer";
+        cover.addEventListener("click", function () { window.location.href = href; });
+      }
+      if (titleEl) {
+        titleEl.style.cursor = "pointer";
+        titleEl.addEventListener("click", function () { window.location.href = href; });
       }
     });
   }
