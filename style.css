@@ -255,7 +255,7 @@
    /* ── 도서 카드 ── */
   .book-cover {
     width: 100%;
-    aspect-ratio: 2 / 3;  /* height 대신 비율로 ㅈ;정 */
+    aspect-ratio: 3 / 4;  /* height 대신 비율로 ㅈ;정 */
     position: relative;
     border-radius: 8px;
   }
