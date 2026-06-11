@@ -312,6 +312,15 @@
     aspect-ratio: 4 / 5;
     position: relative;
     border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .book-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
   }
   
   .bc-1 { background: linear-gradient(160deg, #26215C, #534AB7); }
