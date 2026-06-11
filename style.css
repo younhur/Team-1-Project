@@ -467,3 +467,8 @@
   }
   
   .social-icon:hover { color: #fff; }
+
+  /* ── list.html 전용 ── */
+.list-header { ... }
+.list-header-title { ... }
+...이하 list.html 전용 코드...
