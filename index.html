@@ -131,10 +131,11 @@
   
             <!-- 왼쪽: 텍스트 -->
             <div class="hero-text">
-            <span class="hero-badge">🎧 이달의 오디오북</span>
-            <p class="hero-sub">신규 출시</p>
-            <h1 class="hero-title">이달의 베스트<br/>오디오북</h1>
-            <p class="hero-desc">통근길, 운동 중, 잠들기 전 어디서나</p>
+            <!-- 변경 후 -->
+            <span class="hero-badge">🎧 오디오북</span>
+            <p class="hero-sub">LISTEN TO BOOKS</p>
+            <h1 class="hero-title">눈을 감고<br/>책을 들어보세요</h1>
+            <p class="hero-desc">소리로 만나는 세상의 모든 이야기</p>            
             <div class="d-flex gap-2 mt-3">
             <a href="list.html" class="btn btn-light btn-lg rounded-0 px-4">오디오북 보기</a>
             <a href="list.html" class="btn btn-outline-light btn-lg rounded-0 px-4">전체 보기</a>
@@ -143,17 +144,17 @@
   
       <!-- 오른쪽: 음파 -->
       <div class="sound-wave d-none d-lg-flex align-items-center gap-2">
-        <div class="wave-bar" style="height:40px"></div>
-        <div class="wave-bar" style="height:70px"></div>
-        <div class="wave-bar" style="height:110px"></div>
-        <div class="wave-bar" style="height:150px"></div>
+        <div class="wave-bar" style="height:50px"></div>
+        <div class="wave-bar" style="height:90px"></div>
+        <div class="wave-bar" style="height:140px"></div>
         <div class="wave-bar" style="height:190px"></div>
-        <div class="wave-bar" style="height:220px"></div>
+        <div class="wave-bar" style="height:240px"></div>
+        <div class="wave-bar" style="height:270px"></div>
+        <div class="wave-bar" style="height:240px"></div>
         <div class="wave-bar" style="height:190px"></div>
-        <div class="wave-bar" style="height:150px"></div>
-        <div class="wave-bar" style="height:110px"></div>
-        <div class="wave-bar" style="height:70px"></div>
-        <div class="wave-bar" style="height:40px"></div>
+        <div class="wave-bar" style="height:140px"></div>
+        <div class="wave-bar" style="height:90px"></div>
+        <div class="wave-bar" style="height:50px"></div>
       </div>
   
     </div>
@@ -193,6 +194,46 @@
         </button>
       </div>
     </section>
+
+    .price-card {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 16px;
+  padding: 36px 44px;
+  text-align: center;
+  flex-shrink: 0;
+  margin-right: 60px;
+}
+
+.price-tag {
+  display: inline-block;
+  background: #D85A30;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.price-old {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: line-through;
+  margin-bottom: 8px;
+}
+
+.price-new {
+  font-size: 54px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.price-unit {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
 
     <!-- ④ 카테고리 -->
     <section class="py-5">
