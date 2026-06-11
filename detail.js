@@ -46,7 +46,7 @@
     cartBtn.addEventListener("click", function () {
       cartCount += 1;
       updateCartBadge();
-      alert("'부의 추월차선'을(를) 장바구니에 담았습니다.");
+      alert("'" + BOOK.name + "'을(를) 장바구니에 담았습니다.");
     });
   }
 
@@ -55,7 +55,8 @@
   // https://developers.tosspayments.com/my/api-keys
   const TOSS_CLIENT_KEY = "test_ck_D5GePWvyJnrK0W0k6q8gLzN97Eoq";
 
-  const BOOK = { name: "부의 추월차선", amount: 12000 };
+  // 현재 도서 정보 (books.js 가 URL 의 ?book= 값을 읽어 설정). 없으면 기본값 사용.
+  const BOOK = window.PAGELY_BOOK || { name: "부의 추월차선", amount: 12000 };
 
   // 결제 완료/실패 후 돌아올 주소 (현재 폴더 기준)
   const baseUrl = window.location.href.substring(0, window.location.href.lastIndexOf("/") + 1);
