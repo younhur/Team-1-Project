@@ -377,6 +377,17 @@
     margin-bottom: 10px;
   }
   
+  .book-category {
+    display: inline-block;
+    background: var(--bg-light);
+    color: var(--cta);
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  
   /* ── 도서 목록 탭 ── */
   .book-tabs {
     border-bottom: 2px solid var(--border);
