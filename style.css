@@ -204,6 +204,25 @@
   .carousel-indicators .active {
     background-color: #fff !important;
   }
+
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.18);
+    color: #fff;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    margin-bottom: 14px;
+  }
+  
+  .hero-book-img {
+    border-radius: 6px;
+    box-shadow: -8px 12px 28px rgba(0, 0, 0, 0.45);
+  }
+  
+  .rotate-left  { transform: rotate(-6deg); margin-bottom: 12px; }
+  .rotate-right { transform: rotate(4deg);  margin-bottom: 6px; }
   
   /* ── 카테고리 ── */
   .category-card {
