@@ -165,8 +165,8 @@
   }
   
   .slide-1 { background: linear-gradient(135deg, #26215C 0%, #534AB7 100%); }
-  .slide-2 { background: linear-gradient(135deg, #3c3489 0%, #7F77DD 100%); }
-  .slide-3 { background: linear-gradient(135deg, #1e1a4a 0%, #AFA9EC 100%); }
+  .slide-2 { background: linear-gradient(135deg, #1e1a4a 0%, #3c3489 100%); } /* ← 색상 변경 */
+  .slide-3 { background: linear-gradient(135deg, #26215C 0%, #534AB7 100%); } /* ← 색상 변경 */
   
   .hero-text { max-width: 520px; }
   
@@ -204,7 +204,7 @@
   .carousel-indicators .active {
     background-color: #fff !important;
   }
-
+  
   .hero-badge {
     display: inline-block;
     background: rgba(255, 255, 255, 0.18);
@@ -223,7 +223,59 @@
   
   .rotate-left  { transform: rotate(-6deg); margin-bottom: 12px; }
   .rotate-right { transform: rotate(4deg);  margin-bottom: 6px; }
-
+  
+  /* ── 슬라이드 2: 음파 ── */
+  .sound-wave {
+    height: 240px;
+    align-items: center;
+  }
+  
+  .wave-bar {
+    width: 8px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.4);
+    flex-shrink: 0;
+  }
+  
+  /* ── 슬라이드 3: 가격 카드 ── */
+  .price-card {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 16px;
+    padding: 28px 32px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+  
+  .price-tag {
+    display: inline-block;
+    background: #D85A30;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 12px;
+    margin-bottom: 14px;
+  }
+  
+  .price-old {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: line-through;
+    margin-bottom: 6px;
+  }
+  
+  .price-new {
+    font-size: 42px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  
+  .price-unit {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+  }
   /* ── 카테고리 ── */
   .category-card {
   border: 1.5px solid #CECBF6;      /* 변경: 퍼플 테두리 */
