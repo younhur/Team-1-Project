@@ -165,8 +165,8 @@
   }
   
   .slide-1 { background: linear-gradient(135deg, #26215C 0%, #534AB7 100%); }
-  .slide-2 { background: linear-gradient(135deg, #1e1a4a 0%, #3c3489 100%); } /* ← 색상 변경 */
-  .slide-3 { background: linear-gradient(135deg, #26215C 0%, #534AB7 100%); } /* ← 색상 변경 */
+  .slide-2 { background: linear-gradient(135deg, #1e1a4a 0%, #3c3489 100%); }
+  .slide-3 { background: linear-gradient(135deg, #26215C 0%, #534AB7 100%); }
   
   .hero-text { max-width: 520px; }
   
@@ -278,43 +278,41 @@
     font-size: 14px;
     color: rgba(255, 255, 255, 0.7);
   }
+  
   /* ── 카테고리 ── */
   .category-card {
-  border: 1.5px solid #CECBF6;      /* 변경: 퍼플 테두리 */
-  border-radius: 12px;
-  padding: 28px 16px;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.25s;
-  background: #EEEDFE;              /* 변경: 연한 퍼플 배경 */
-  color: var(--primary);
-}
-
-.category-card i { color: var(--primary); }
-.category-card h6 { color: var(--primary); font-weight: 600; }
-.category-card p { color: var(--cta); }
-
-/* 호버는 그대로 유지 */
-.category-card:hover {
-  background: var(--cta);
-  border-color: var(--cta);
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(83, 74, 183, 0.2);
-}
-
-.category-card:hover i,
-.category-card:hover h6,
-.category-card:hover p { color: #fff !important; }
+    border: 1.5px solid #CECBF6;
+    border-radius: 12px;
+    padding: 28px 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.25s;
+    background: #EEEDFE;
+    color: var(--primary);
+  }
   
-   /* ── 도서 카드 ── */
+  .category-card i { color: var(--primary); }
+  .category-card h6 { color: var(--primary); font-weight: 600; }
+  .category-card p { color: var(--cta); }
+  
+  .category-card:hover {
+    background: var(--cta);
+    border-color: var(--cta);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(83, 74, 183, 0.2);
+  }
+  
+  .category-card:hover i,
+  .category-card:hover h6,
+  .category-card:hover p { color: #fff !important; }
+  
+  /* ── 도서 카드 ── */
   .book-cover {
     width: 100%;
-    aspect-ratio: 4 / 5;  /* height 대신 비율로 ㅈ;정 */
+    aspect-ratio: 4 / 5;
     position: relative;
     border-radius: 8px;
   }
-  
-
   
   .bc-1 { background: linear-gradient(160deg, #26215C, #534AB7); }
   .bc-2 { background: linear-gradient(160deg, #534AB7, #7F77DD); }
@@ -467,13 +465,68 @@
   }
   
   .social-icon:hover { color: #fff; }
-
+  
   /* ── list.html 전용 ── */
-.list-header { ... }
-.list-header-title { ... }
-...이하 list.html 전용 코드...
-
-.sort-select {
+  
+  .list-header {
+    background: var(--bg-light);
+    padding: 28px 0 24px;
+    border-bottom: 1px solid var(--border);
+    margin-top: 8px;
+  }
+  
+  .list-header-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 4px;
+  }
+  
+  .list-header-sub {
+    font-size: 13px;
+    color: var(--gray);
+    margin: 0;
+  }
+  
+  .list-toolbar {
+    border-bottom: 2px solid var(--border);
+    background: #fff;
+    padding: 0;
+  }
+  
+  .list-tabs {
+    border-bottom: none;
+    gap: 0;
+  }
+  
+  .list-tab-btn {
+    border: none !important;
+    color: var(--gray);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 12px 20px;
+    border-radius: 0 !important;
+    background: transparent;
+  }
+  
+  .list-tab-btn.active {
+    color: var(--cta) !important;
+    border-bottom: 2px solid var(--cta) !important;
+    background: transparent !important;
+    margin-bottom: -2px;
+  }
+  
+  .list-tab-btn:hover { color: var(--cta); }
+  
+  .sort-total {
+    font-size: 13px;
+    color: var(--gray);
+    white-space: nowrap;
+  }
+  
+  .sort-total strong { color: var(--primary); }
+  
+  .sort-select {
     width: auto;
     min-width: 120px;
     max-width: 160px;
@@ -487,4 +540,60 @@
   .sort-select:focus {
     box-shadow: none;
     border-color: var(--btn);
+  }
+  
+  .filter-wrap { padding: 4px 0; }
+  
+  .filter-heading {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--primary);
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 16px;
+  }
+  
+  .filter-title {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 10px;
+    margin-top: 4px;
+  }
+  
+  .form-check-input:checked {
+    background-color: var(--cta);
+    border-color: var(--cta);
+  }
+  
+  .form-check-input:focus {
+    box-shadow: 0 0 0 3px rgba(83, 74, 183, 0.2);
+  }
+  
+  .form-check-label {
+    font-size: 13px;
+    color: #374151;
+    cursor: pointer;
+  }
+  
+  .list-pagination .page-link {
+    color: var(--cta);
+    border: 1px solid var(--border);
+    border-radius: 6px !important;
+    margin: 0 3px;
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+  
+  .list-pagination .page-item.active .page-link {
+    background-color: var(--cta);
+    border-color: var(--cta);
+    color: #fff;
+  }
+  
+  .list-pagination .page-link:hover {
+    background-color: var(--bg-light);
+    color: var(--cta);
   }

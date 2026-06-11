@@ -16,7 +16,7 @@
       <small>🎉 신규 가입 시 첫 달 무료 · 전자책 30만 권 보유</small>
     </div>
 
-    <!-- ② 네비게이션 1단: 로고 + 검색 + 로그인/회원가입/장바구니 -->
+    <!-- ② 네비게이션 1단 -->
     <nav class="navbar sticky-top" id="mainNav">
       <div class="container">
 
@@ -77,6 +77,17 @@
     </nav>
 
     <!-- ② 네비게이션 2단: 카테고리 메뉴 -->
+    <div class="category-nav">
+      <div class="container">
+        <ul class="category-menu">
+          <li><a href="list.html" class="category-link active">전체</a></li>
+          <li><a href="list.html" class="category-link">일반</a></li>
+          <li><a href="list.html" class="category-link">장르</a></li>
+          <li><a href="list.html" class="category-link">만화</a></li>
+          <li><a href="list.html" class="category-link">오디오북</a></li>
+        </ul>
+      </div>
+    </div>
 
     <!-- ③ 히어로 캐러셀 -->
     <section id="hero">
@@ -88,92 +99,77 @@
         </div>
         <div class="carousel-inner">
 
+          <!-- 슬라이드 1 -->
           <div class="carousel-item active hero-slide slide-1">
-            <div class="container h-100 d-flex align-items-center
-                        justify-content-between">
+            <div class="container h-100 d-flex align-items-center justify-content-between">
               <div class="hero-text">
-                <p class="hero-badge">>📚 북마스터 PICK</p>
+                <span class="hero-badge">📚 북마스터 PICK</span>
                 <p class="hero-sub">BEST ECONOMY & BUSINESS</p>
-                <hi class="hero-title">북마스터가 선정한<br/>최고의 경제경영서</hi>
+                <h1 class="hero-title">북마스터가 선정한<br/>최고의 경제경영서</h1>
                 <p class="hero-desc">각 분야 전문가 북마스터가 엄선한<br/>이달의 필독 경제경영 베스트 3</p>
                 <div class="d-flex gap-2 mt-3">
-                <a href="list.html" class="btn btn-light btn-lg rounded-0 px-4">지금 읽기</a>
-            <a href="list.html" class="btn btn-outline-light btn-lg rounded-0 px-4">전체 보기</a>
-            </div>
-          </div>
-
-             <!-- 오른쪽: 책 표지 -->
-            <div class="hero-books d-none d-lg-flex gap-3 align-items-end pb-2">
+                  <a href="list.html" class="btn btn-light btn-lg rounded-0 px-4">지금 읽기</a>
+                  <a href="list.html" class="btn btn-outline-light btn-lg rounded-0 px-4">전체 보기</a>
+                </div>
+              </div>
+              <div class="hero-books d-none d-lg-flex gap-3 align-items-end pb-2">
                 <img src="images/book1.png" height="240" class="hero-book-img rotate-left" />
                 <img src="images/book2.png" height="280" class="hero-book-img" />
                 <img src="images/book3.png" height="240" class="hero-book-img rotate-right" />
+              </div>
+            </div>
+          </div>
+
+          <!-- 슬라이드 2 -->
+          <div class="carousel-item hero-slide slide-2">
+            <div class="container h-100 d-flex align-items-center justify-content-between">
+              <div class="hero-text">
+                <span class="hero-badge">🎧 오디오북</span>
+                <p class="hero-sub">LISTEN TO BOOKS</p>
+                <h1 class="hero-title">눈을 감고<br/>책을 들어보세요</h1>
+                <p class="hero-desc">소리로 만나는 세상의 모든 이야기</p>
+                <div class="d-flex gap-2 mt-3">
+                  <a href="list.html" class="btn btn-light btn-lg rounded-0 px-4">오디오북 보기</a>
+                  <a href="list.html" class="btn btn-outline-light btn-lg rounded-0 px-4">전체 보기</a>
                 </div>
-  
-    </div>
-  </div>
-  
-  
+              </div>
+              <div class="sound-wave d-none d-lg-flex align-items-center gap-2">
+                <div class="wave-bar" style="height:50px"></div>
+                <div class="wave-bar" style="height:90px"></div>
+                <div class="wave-bar" style="height:140px"></div>
+                <div class="wave-bar" style="height:190px"></div>
+                <div class="wave-bar" style="height:240px"></div>
+                <div class="wave-bar" style="height:270px"></div>
+                <div class="wave-bar" style="height:240px"></div>
+                <div class="wave-bar" style="height:190px"></div>
+                <div class="wave-bar" style="height:140px"></div>
+                <div class="wave-bar" style="height:90px"></div>
+                <div class="wave-bar" style="height:50px"></div>
+              </div>
+            </div>
+          </div>
 
-            <div class="carousel-item hero-slide slide-2">
-            <div class="container h-100 d-flex align-items-center
-                    justify-content-between">
-  
-            <!-- 왼쪽: 텍스트 -->
-            <div class="hero-text">
-            <!-- 변경 후 -->
-            <span class="hero-badge">🎧 오디오북</span>
-            <p class="hero-sub">LISTEN TO BOOKS</p>
-            <h1 class="hero-title">눈을 감고<br/>책을 들어보세요</h1>
-            <p class="hero-desc">소리로 만나는 세상의 모든 이야기</p>            
-            <div class="d-flex gap-2 mt-3">
-            <a href="list.html" class="btn btn-light btn-lg rounded-0 px-4">오디오북 보기</a>
-            <a href="list.html" class="btn btn-outline-light btn-lg rounded-0 px-4">전체 보기</a>
-        </div>
-    </div>
-  
-      <!-- 오른쪽: 음파 -->
-      <div class="sound-wave d-none d-lg-flex align-items-center gap-2">
-        <div class="wave-bar" style="height:50px"></div>
-        <div class="wave-bar" style="height:90px"></div>
-        <div class="wave-bar" style="height:140px"></div>
-        <div class="wave-bar" style="height:190px"></div>
-        <div class="wave-bar" style="height:240px"></div>
-        <div class="wave-bar" style="height:270px"></div>
-        <div class="wave-bar" style="height:240px"></div>
-        <div class="wave-bar" style="height:190px"></div>
-        <div class="wave-bar" style="height:140px"></div>
-        <div class="wave-bar" style="height:90px"></div>
-        <div class="wave-bar" style="height:50px"></div>
-      </div>
-  
-    </div>
-  </div>
+          <!-- 슬라이드 3 -->
+          <div class="carousel-item hero-slide slide-3">
+            <div class="container h-100 d-flex align-items-center justify-content-between">
+              <div class="hero-text">
+                <span class="hero-badge">👑 첫 달 무료</span>
+                <p class="hero-sub">구독 플랜</p>
+                <h1 class="hero-title">무제한 독서,<br/>단 하나의 구독</h1>
+                <p class="hero-desc">30만 권 전 장르 무제한</p>
+                <div class="d-flex gap-2 mt-3">
+                  <a href="login.html" class="btn btn-light btn-lg rounded-0 px-4">무료로 시작</a>
+                </div>
+              </div>
+              <div class="price-card d-none d-lg-block">
+                <span class="price-tag">첫 달 무료</span>
+                <p class="price-old">월 19,900원</p>
+                <p class="price-new">₩9,900</p>
+                <p class="price-unit">/ 월 · 언제든 해지</p>
+              </div>
+            </div>
+          </div>
 
-  <div class="carousel-item hero-slide slide-3">
-    <div class="container h-100 d-flex align-items-center
-                justify-content-between">
-  
-      <!-- 왼쪽: 텍스트 -->
-      <div class="hero-text">
-        <span class="hero-badge">👑 첫 달 무료</span>
-        <p class="hero-sub">구독 플랜</p>
-        <h1 class="hero-title">무제한 독서,<br/>단 하나의 구독</h1>
-        <p class="hero-desc">30만 권 전 장르 무제한</p>
-        <div class="d-flex gap-2 mt-3">
-          <a href="login.html" class="btn btn-light btn-lg rounded-0 px-4">무료로 시작</a>
-        </div>
-      </div>
-  
-      <!-- 오른쪽: 가격 카드 -->
-      <div class="price-card d-none d-lg-block">
-        <span class="price-tag">첫 달 무료</span>
-        <p class="price-old">월 19,900원</p>
-        <p class="price-new">₩9,900</p>
-        <p class="price-unit">/ 월 · 언제든 해지</p>
-      </div>
-  
-    </div>
-  </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
           <i class="bi bi-chevron-left fs-4 text-white"></i>
@@ -184,7 +180,6 @@
       </div>
     </section>
 
-   
     <!-- ④ 카테고리 -->
     <section class="py-5">
       <div class="container">
