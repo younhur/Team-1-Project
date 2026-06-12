@@ -899,3 +899,13 @@
     line-height: 1.7;
     margin: 0;
   }
+  
+  /* ── 도서 카드 이미지 클릭 링크 ── */
+  a.text-decoration-none .book-cover {
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  a.text-decoration-none:hover .book-cover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(83, 74, 183, 0.2);
+  }
