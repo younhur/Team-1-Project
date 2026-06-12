@@ -212,46 +212,23 @@
     }
   
     // ── 1) 카드 링크 자동 연결 ──
+    // HTML 에 이미 detail.html?id=XXX 가 하드코딩되어 있으므로
+    // 카드 조작은 하지 않는다. (링크를 가로채지 않음)
     function enhanceCards() {
       document.querySelectorAll(".book-card").forEach(function (card) {
+        // 표지 이미지가 비어 있을 때만 books 데이터로 채운다 (상세페이지 추천 카드 등)
         const titleEl = card.querySelector(".book-title");
         if (!titleEl) return;
         const title = titleEl.textContent.trim();
         const book = BY_TITLE[title];
-        const href = detailUrl(title);
-  
-        // 카드 내 모든 detail.html 링크 업데이트 (표지 래퍼 + 담기 버튼)
-        card.querySelectorAll('a[href="detail.html"]').forEach(function (a) {
-          a.setAttribute("href", href);
-        });
-  
-        // 표지 이미지 없으면 자동 삽입
         const cover = card.querySelector(".book-cover");
-        if (cover) {
-          if (book && !cover.querySelector("img")) {
-            const img = document.createElement("img");
-            img.alt = title;
-            img.onerror = function () { this.onerror = null; this.src = FALLBACK_COVER; };
-            img.src = book.cover;
-            cover.insertBefore(img, cover.firstChild);
-          }
-          // 표지 클릭 시 상세 이동
-          cover.style.cursor = "pointer";
-          cover.addEventListener("click", function (e) {
-            e.preventDefault();
-            window.location.href = href;
-          });
+        if (book && cover && !cover.querySelector("img")) {
+          const img = document.createElement("img");
+          img.alt = title;
+          img.onerror = function () { this.onerror = null; this.src = FALLBACK_COVER; };
+          img.src = book.cover;
+          cover.insertBefore(img, cover.firstChild);
         }
-  
-        // 제목 클릭 시 상세 이동
-        titleEl.style.cursor = "pointer";
-        titleEl.addEventListener("click", function () {
-          window.location.href = href;
-        });
-  
-        // 표지를 감싼 <a> 태그가 있으면 href 업데이트
-        const coverLink = card.querySelector("a.text-decoration-none");
-        if (coverLink) coverLink.setAttribute("href", href);
       });
     }
   
