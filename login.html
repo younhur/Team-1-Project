@@ -73,10 +73,32 @@
       font-weight: 600;
     }
 
-    .sns-btn img { height: 20px; }
     .kakao-btn { background: #FFE500; }
     .naver-btn { background: #1EC800; color: #fff; }
-    .google-btn { background: #fff; border: 1px solid #e5e7eb; }
+    .google-btn { background: #fff; border: 1px solid #e5e7eb; color: #333; }
+
+    /* ── SNS 아이콘 (CSS 방식) ── */
+    .sns-icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+      flex-shrink: 0;
+    }
+
+    .kakao-icon { background: #3A1D1D; color: #FFE500; }
+    .naver-icon  { background: #fff;    color: #1EC800; }
+    .google-icon {
+      background: #fff;
+      color: #EA4335;
+      border: 1.5px solid #e5e7eb;
+      font-style: italic;
+      font-family: serif;
+    }
 
     /* ── 구분선 ── */
     .auth-divider {
@@ -441,15 +463,15 @@
 
       <!-- SNS 로그인 -->
       <button class="sns-btn kakao-btn">
-        <img src="https://svc-fe-artifact.millietown.com/v3/images/login/kakao-icon.9c9940291430ca6ad83b9ae1f3cc81a8.svg" alt="카카오" />
+        <span class="sns-icon kakao-icon">K</span>
         카카오 로그인
       </button>
       <button class="sns-btn naver-btn">
-        <img src="images/naver.png" alt="네이버" />
+        <span class="sns-icon naver-icon">N</span>
         네이버 로그인
       </button>
       <button class="sns-btn google-btn">
-        <img src="images/logo-google-g.png" alt="구글" />
+        <span class="sns-icon google-icon">G</span>
         구글 로그인
       </button>
 
@@ -505,15 +527,15 @@
 
       <!-- SNS 회원가입 -->
       <button class="sns-btn kakao-btn">
-        <img src="https://svc-fe-artifact.millietown.com/v3/images/login/kakao-icon.9c9940291430ca6ad83b9ae1f3cc81a8.svg" alt="카카오" />
+        <span class="sns-icon kakao-icon">K</span>
         카카오로 시작하기
       </button>
       <button class="sns-btn naver-btn">
-        <img src="images/naver.png" alt="네이버" />
+        <span class="sns-icon naver-icon">N</span>
         네이버로 시작하기
       </button>
       <button class="sns-btn google-btn">
-        <img src="images/logo-google-g.png" alt="구글" />
+        <span class="sns-icon google-icon">G</span>
         구글로 시작하기
       </button>
 
