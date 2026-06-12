@@ -726,17 +726,23 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    /* ── 로그인 → 회원가입 전환 ── */
-    document.getElementById('goSignup').addEventListener('click', (e) => {
-      e.preventDefault();
-      showSignup();
-    });
+    /* ── 로그인 → 회원가입 전환 (버튼이 있을 때만) ── */
+    const goSignupBtn = document.getElementById('goSignup');
+    if (goSignupBtn) {
+      goSignupBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        showSignup();
+      });
+    }
 
-    /* ── 회원가입 → 로그인 전환 ── */
-    document.getElementById('goLogin').addEventListener('click', (e) => {
-      e.preventDefault();
-      showLogin();
-    });
+    /* ── 회원가입 → 로그인 전환 (버튼이 있을 때만) ── */
+    const goLoginBtn = document.getElementById('goLogin');
+    if (goLoginBtn) {
+      goLoginBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        showLogin();
+      });
+    }
 
     /* ── 일반 로그인 폼 토글 (1.jpg → 2.jpg) ── */
     loginToggle.addEventListener('click', () => {
