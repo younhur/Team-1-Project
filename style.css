@@ -909,3 +909,179 @@
     transform: translateY(-4px);
     box-shadow: 0 8px 24px rgba(83, 74, 183, 0.2);
   }
+  
+  /* ── 위시리스트 활성화 상태 ── */
+  .btn-wish.active {
+    border-color: #e74c3c;
+    color: #e74c3c;
+    background: #fff5f5;
+  }
+  
+  .btn-wish.active i {
+    color: #e74c3c;
+  }
+  
+  
+  /* viewer.css — Pagely 전자책 뷰어 */
+  .viewer-body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-page);
+    color: var(--primary);
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  /* ── 테마: 세피아 / 야간 ── */
+  .viewer-body.theme-sepia {
+    background: #f4ecd8;
+    color: #4b3b2a;
+  }
+  .viewer-body.theme-dark {
+    background: #1a1822;
+    color: #d6d3e0;
+  }
+  
+  /* ── 상단 바 ── */
+  .viewer-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 20px;
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+  }
+  .theme-sepia .viewer-topbar { background: #efe6d0; border-color: #e0d4b8; }
+  .theme-dark .viewer-topbar { background: #252233; border-color: #34303f; }
+  
+  .viewer-back {
+    font-size: 14px;
+    font-weight: 500;
+    color: inherit;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .viewer-back:hover { color: var(--cta); }
+  
+  .viewer-book-info {
+    text-align: center;
+    overflow: hidden;
+    line-height: 1.3;
+  }
+  .viewer-book-title {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .viewer-book-author { font-size: 11px; opacity: 0.6; }
+  
+  .viewer-controls { display: flex; gap: 6px; }
+  .viewer-controls button {
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--border);
+    background: transparent;
+    border-radius: 8px;
+    color: inherit;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+  }
+  .viewer-controls button:hover { border-color: var(--cta); color: var(--cta); }
+  .theme-dark .viewer-controls button { border-color: #3a3648; }
+  
+  /* ── 진행률 ── */
+  .viewer-progress { height: 3px; background: rgba(0, 0, 0, 0.08); }
+  .theme-dark .viewer-progress { background: rgba(255, 255, 255, 0.1); }
+  .viewer-progress-bar {
+    height: 100%;
+    width: 0;
+    background: var(--cta);
+    transition: width 0.3s;
+  }
+  
+  /* ── 본문 영역 ── */
+  .viewer-stage {
+    flex: 1;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 8px;
+    padding: 16px;
+  }
+  
+  .viewer-nav {
+    flex-shrink: 0;
+    width: 48px;
+    border: none;
+    background: transparent;
+    color: inherit;
+    font-size: 1.5rem;
+    opacity: 0.4;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: opacity 0.2s, background 0.2s;
+  }
+  .viewer-nav:hover:not(:disabled) { opacity: 1; background: rgba(83, 74, 183, 0.08); }
+  .viewer-nav:disabled { opacity: 0.12; cursor: default; }
+  
+  .viewer-page {
+    width: 100%;
+    max-width: 680px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(38, 33, 92, 0.08);
+    padding: 56px clamp(24px, 6vw, 64px);
+    overflow-y: auto;
+    font-size: var(--reader-font, 17px);
+    line-height: 1.95;
+  }
+  .theme-sepia .viewer-page { background: #fbf5e6; box-shadow: none; }
+  .theme-dark .viewer-page { background: #252233; box-shadow: none; }
+  
+  .viewer-page h2 {
+    font-size: 1.4em;
+    font-weight: 700;
+    margin: 0 0 28px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid var(--cta);
+    display: inline-block;
+  }
+  .viewer-page p { margin: 0 0 1.4em; text-align: justify; }
+  
+  .viewer-page .reader-note {
+    margin-top: 40px;
+    padding: 16px 18px;
+    font-size: 0.82em;
+    border-radius: 8px;
+    background: var(--bg-light);
+    color: var(--cta);
+  }
+  .theme-sepia .viewer-page .reader-note { background: #efe2c4; color: #7a5a2a; }
+  .theme-dark .viewer-page .reader-note { background: #322e42; color: var(--hover); }
+  
+  /* ── 하단 바 ── */
+  .viewer-bottombar {
+    text-align: center;
+    padding: 12px;
+    font-size: 13px;
+    opacity: 0.7;
+    background: #fff;
+    border-top: 1px solid var(--border);
+  }
+  .theme-sepia .viewer-bottombar { background: #efe6d0; border-color: #e0d4b8; }
+  .theme-dark .viewer-bottombar { background: #252233; border-color: #34303f; }
+  
+  /* ── 모바일 ── */
+  @media (max-width: 576px) {
+    .viewer-nav { width: 32px; font-size: 1.2rem; }
+    .viewer-stage { padding: 8px; }
+    .viewer-page { padding: 32px 22px; }
+  }
