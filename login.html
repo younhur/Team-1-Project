@@ -15,8 +15,13 @@
       background: linear-gradient(to top, #534AB7, #7F77DD, #AFA9EC);
       display: flex;
       justify-content: center;
-      align-items: flex-start;
+      align-items: center;
       padding: 40px 16px 60px;
+    }
+
+    /* 카드 내용이 화면보다 길면 위에서부터 (잘림 방지) */
+    @media (max-height: 800px) {
+      .auth-body { align-items: flex-start; }
     }
 
     .auth-card {
@@ -44,6 +49,31 @@
       font-weight: 500;
       color: #222;
       text-align: center;
+    }
+
+    /* ── 로그인 폼 하단 회원가입 안내 ── */
+    .login-signup-guide {
+      margin-top: 28px;
+      text-align: center;
+    }
+    .signup-hr {
+      border: none;
+      border-top: 1px solid #ccc;
+      margin: 0 0 20px;
+    }
+    .signup-text {
+      font-size: 15px;
+      color: #555;
+      margin: 0;
+    }
+    .signup-text a {
+      color: #534AB7;
+      font-weight: 700;
+      margin-left: 6px;
+      text-decoration: none;
+    }
+    .signup-text a:hover {
+      text-decoration: underline;
     }
 
     /* ── 회원가입 타이틀 ── */
@@ -509,6 +539,15 @@
             <a href="#">아이디 찾기</a>
             <a href="#">비밀번호 찾기</a>
           </div>
+        </div>
+
+        <!-- 구분선 + 회원가입 안내 -->
+        <div class="login-signup-guide">
+          <hr class="signup-hr" />
+          <p class="signup-text">
+            아직 Pagely 계정이 없나요?
+            <a href="login.html?mode=signup">회원가입</a>
+          </p>
         </div>
       </div>
 
