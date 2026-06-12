@@ -8,8 +8,18 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
     <link rel="stylesheet" href="style.css" />
+    <style>
+      /* 책 데이터 렌더링 완료 전까지 본문 숨김 (깜빡임 방지) */
+      .detail-loading .detail-fade {
+        opacity: 0;
+      }
+      .detail-fade {
+        opacity: 1;
+        transition: opacity 0.25s ease;
+      }
+    </style>
   </head>
-  <body>
+  <body class="detail-loading">
 
     <!-- ① 공지 바 -->
     <div class="announcement-bar text-center py-2">
@@ -107,7 +117,7 @@
     </div>
 
     <!-- ④ 도서 상세 -->
-    <section class="py-5">
+    <section class="py-5 detail-fade">
       <div class="container">
         <div class="row g-4 g-lg-5">
 

@@ -330,6 +330,8 @@
         BY_ID[DEFAULT_ID];
       renderDetail(book);
       window.PAGELY_BOOK = { id: book.id, name: book.title, amount: book.price };
+      // 렌더링 완료 → 본문 페이드인 (깜빡임 방지)
+      document.body.classList.remove("detail-loading");
     }
   
     window.PAGELY_BOOKS = BOOKS;
