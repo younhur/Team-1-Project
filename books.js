@@ -220,9 +220,10 @@
         const book = BY_TITLE[title];
         const href = detailUrl(title);
   
-        // "담기" 버튼 링크 업데이트
-        const link = card.querySelector('a[href="detail.html"]');
-        if (link) link.setAttribute("href", href);
+        // 카드 내 모든 detail.html 링크 업데이트 (표지 래퍼 + 담기 버튼)
+        card.querySelectorAll('a[href="detail.html"]').forEach(function (a) {
+          a.setAttribute("href", href);
+        });
   
         // 표지 이미지 없으면 자동 삽입
         const cover = card.querySelector(".book-cover");
